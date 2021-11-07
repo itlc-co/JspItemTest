@@ -1,7 +1,6 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
+﻿<%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@include file="/jsp/common/head.jsp"%>
-
 <div class="right">
        <div class="location">
            <strong>你现在所在的位置是:</strong>
@@ -10,9 +9,9 @@
        <div class="search">
        <form method="get" action="${pageContext.request.contextPath }/jsp/bill.do">
 			<input name="method" value="query" class="input-text" type="hidden">
+		   <input type="hidden" name="pageIndex" value="1"/>
 			<span>商品名称：</span>
 			<input name="queryProductName" type="text" value="${queryProductName }">
-			 
 			<span>供应商：</span>
 			<select name="queryProviderId">
 				<c:if test="${providerList != null }">
@@ -32,7 +31,7 @@
        		</select>
 			
 			 <input	value="查 询" type="submit" id="searchbutton">
-			 <a href="${pageContext.request.contextPath }/jsp/billadd.jsp">添加订单</a>
+			 <a href="${pageContext.request.contextPath }/jsp/billadd.jsp" style="margin: 10px 20px;display: flex">添加订单</a>
 		</form>
        </div>
        <!--账单表格 样式和供应商公用-->
@@ -68,7 +67,7 @@
 					</td>
 					<td>
 					<span>
-					<fmt:formatDate value="${bill.creationDate}" pattern="yyyy-MM-dd"/>
+					<fmt:formatDate value="${bill.createionDate.getTime()}" pattern="yyyy-MM-dd"/>
 					</span>
 					</td>
 					<td>
@@ -79,6 +78,13 @@
 				</tr>
 			</c:forEach>
       </table>
+
+	<input type="hidden" id="totalPageCount" value="${totalPageCount}"/>
+	<c:import url="rollpage.jsp">
+		<c:param name="totalCount" value="${totalCount}"/>
+		<c:param name="currentPageNo" value="${currentPageNo}"/>
+		<c:param name="totalPageCount" value="${totalPageCount}"/>
+	</c:import>
   </div>
 </section>
 

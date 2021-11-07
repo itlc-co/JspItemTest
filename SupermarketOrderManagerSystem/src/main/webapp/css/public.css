@@ -1,4 +1,4 @@
-*{
+﻿*{
     margin: 0;
     padding: 0;
 }
@@ -225,7 +225,7 @@ li{
     width: 80px;
     padding-left:40px;
     float: right;
-    margin: 10px 60px;
+    margin: 10px 20px !important;
     height: 30px;
     line-height: 30px;
     border: 1px solid #0c89de;
@@ -233,7 +233,7 @@ li{
     color: #fff;
     font-weight: bold;
     background:#47acf1 url("../images/tianjia.png") 10px center no-repeat;
-    display: inline-block;
+    display: flex !important;
 }
 .search a:hover,.search a:active{
     background-color: #0778c5;

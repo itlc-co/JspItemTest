@@ -1,3 +1,4 @@
+﻿<%@ page import="java.text.SimpleDateFormat" %>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@include file="/jsp/common/head.jsp"%>
@@ -32,7 +33,7 @@
              </div>
 			 <div>
                     <label for="data">出生日期：</label>
-                    <input type="text" Class="Wdate" id="birthday" name="birthday" value="${user.birthday }"
+                    <input type="text" Class="Wdate" id="birthday" name="birthday" value="${SimpleDateFormat.getDateTimeInstance().format(user.birthday.getTime())}"
 					readonly="readonly" onclick="WdatePicker();">
                     <font color="red"></font>
               </div>

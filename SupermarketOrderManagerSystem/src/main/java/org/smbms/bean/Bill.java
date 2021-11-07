@@ -1,4 +1,4 @@
-package org.smbms.javabean;
+package org.smbms.bean;
 
 import java.math.BigDecimal;
 import java.util.Calendar;
@@ -17,78 +17,106 @@ import java.util.Calendar;
  * @Version: 1.0
  */
 public class Bill {
-    private Integer id;   //id
-    private String billCode; //账单编码
-    private String productName; //商品名称
-    private String productDesc; //商品描述
-    private String productUnit; //商品单位
-    private BigDecimal productCount; //商品数量
-    private BigDecimal totalPrice; //总金额
-    private Integer isPayment; //是否支付
-    private Integer providerId; //供应商ID
+    public Integer id;   //id
+    public String billCode; //账单编码
+    public String productName; //商品名称
+    public String productDesc; //商品描述
+    public String productUnit; //商品单位
+    public BigDecimal productCount; //商品数量
+    public BigDecimal totalPrice; //总金额
+    public Integer isPayment; //是否支付
+    public Integer providerId; //供应商ID
+    public Integer createBy; //创建者
+    public Calendar createionDate; //创建时间
+    public Integer regenerator; //更新者
+    public Calendar modifyDate;//更新时间
+    public String providerName;//供应商名称
+
+
+    @Override
+    public String toString() {
+        return "Bill{" +
+                "id=" + id +
+                ", billCode='" + billCode + '\'' +
+                ", productName='" + productName + '\'' +
+                ", productDesc='" + productDesc + '\'' +
+                ", productUnit='" + productUnit + '\'' +
+                ", productCount=" + productCount +
+                ", totalPrice=" + totalPrice +
+                ", isPayment=" + isPayment +
+                ", providerId=" + providerId +
+                ", createBy=" + createBy +
+                ", createionDate=" + createionDate +
+                ", regenerator=" + regenerator +
+                ", modifyDate=" + modifyDate +
+                ", providerName='" + providerName + '\'' +
+                '}';
+    }
 
     public Bill() {
     }
 
-    private Integer createBy; //创建者
-    private Calendar createionDate; //创建时间
-    private Integer modifyBy; //更新者
-    private Calendar modifyDate;//更新时间
 
-    private String providerName;//供应商名称
-
-
-    public String getProviderName() {
-        return providerName;
-    }
-    public void setProviderName(String providerName) {
-        this.providerName = providerName;
-    }
     public Integer getId() {
         return id;
     }
+
     public void setId(Integer id) {
         this.id = id;
     }
+
     public String getBillCode() {
         return billCode;
     }
+
     public void setBillCode(String billCode) {
         this.billCode = billCode;
     }
+
     public String getProductName() {
         return productName;
     }
+
     public void setProductName(String productName) {
         this.productName = productName;
     }
+
     public String getProductDesc() {
         return productDesc;
     }
+
     public void setProductDesc(String productDesc) {
         this.productDesc = productDesc;
     }
+
     public String getProductUnit() {
         return productUnit;
     }
+
     public void setProductUnit(String productUnit) {
         this.productUnit = productUnit;
     }
+
     public BigDecimal getProductCount() {
         return productCount;
     }
+
     public void setProductCount(BigDecimal productCount) {
         this.productCount = productCount;
     }
+
     public BigDecimal getTotalPrice() {
         return totalPrice;
     }
+
     public void setTotalPrice(BigDecimal totalPrice) {
         this.totalPrice = totalPrice;
     }
+
     public Integer getIsPayment() {
         return isPayment;
     }
+
     public void setIsPayment(Integer isPayment) {
         this.isPayment = isPayment;
     }
@@ -96,31 +124,48 @@ public class Bill {
     public Integer getProviderId() {
         return providerId;
     }
+
     public void setProviderId(Integer providerId) {
         this.providerId = providerId;
     }
-    public Integer getCreatedBy() {
+
+    public Integer getCreateBy() {
         return createBy;
     }
-    public void setCreatedBy(Integer createdBy) {
-        this.createBy = createdBy;
+
+    public void setCreateBy(Integer createBy) {
+        this.createBy = createBy;
     }
-    public Calendar getCreationDate() {
+
+    public Calendar getCreateionDate() {
         return createionDate;
     }
-    public void setCreationDate(Calendar creationDate) {
-        this.createionDate = creationDate;
+
+    public void setCreateionDate(Calendar createionDate) {
+        this.createionDate = createionDate;
     }
-    public Integer getModifyBy() {
-        return modifyBy;
+
+    public Integer getRegenerator() {
+        return regenerator;
     }
-    public void setModifyBy(Integer modifyBy) {
-        this.modifyBy = modifyBy;
+
+    public void setRegenerator(Integer regenerator) {
+        this.regenerator = regenerator;
     }
+
     public Calendar getModifyDate() {
         return modifyDate;
     }
+
     public void setModifyDate(Calendar modifyDate) {
         this.modifyDate = modifyDate;
+    }
+
+    public String getProviderName() {
+        return providerName;
+    }
+
+    public void setProviderName(String providerName) {
+        this.providerName = providerName;
     }
 }

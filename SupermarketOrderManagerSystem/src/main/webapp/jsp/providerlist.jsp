@@ -1,4 +1,4 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
+﻿<%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@include file="/jsp/common/head.jsp"%>
 
@@ -10,6 +10,7 @@
         <div class="search">
         	<form method="get" action="${pageContext.request.contextPath }/jsp/provider.do">
 				<input name="method" value="query" type="hidden">
+				<input type="hidden" name="pageIndex" value="1"/>
 				<span>供应商编码：</span>
 				<input name="queryProCode" type="text" value="${queryProCode }">
 				
@@ -50,7 +51,7 @@
 					</td>
 					<td>
 					<span>
-					<fmt:formatDate value="${provider.creationDate}" pattern="yyyy-MM-dd"/>
+					<fmt:formatDate value="${provider.creationDate.getTime()}" pattern="yyyy-MM-dd"/>
 					</span>
 					</td>
 					<td>
@@ -61,7 +62,12 @@
 				</tr>
 			</c:forEach>
         </table>
-
+		<input type="hidden" id="totalPageCount" value="${totalPageCount}"/>
+		<c:import url="rollpage.jsp">
+			<c:param name="totalCount" value="${totalCount}"/>
+			<c:param name="currentPageNo" value="${currentPageNo}"/>
+			<c:param name="totalPageCount" value="${totalPageCount}"/>
+		</c:import>
     </div>
 </section>
 

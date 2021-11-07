@@ -1,6 +1,6 @@
 <component name="ArtifactManager">
   <artifact type="exploded-war" name="SupermaketOrderManagerSystem:war exploded">
-    <output-path>$PROJECT_DIR$/SupermarketOrderManagerSystem/target/SupermaketOrderManagerSystem-1.0-SNAPSHOT</output-path>
+    <output-path>$PROJECT_DIR$/SupermarketOrderManagerSystem/target/SupermaketOrderManagerSystem-Unknown</output-path>
     <properties id="maven-jee-properties">
       <options>
         <exploded>true</exploded>
@@ -27,10 +27,11 @@
           <element id="library" level="project" name="Maven: javax.servlet:javax.servlet-api:4.0.1" />
           <element id="library" level="project" name="Maven: javax.servlet.jsp:javax.servlet.jsp-api:2.3.3" />
           <element id="library" level="project" name="Maven: mysql:mysql-connector-java:5.1.27" />
+          <element id="library" level="project" name="Maven: com.alibaba:fastjson:1.2.62" />
         </element>
       </element>
       <element id="directory" name="META-INF">
-        <element id="file-copy" path="$PROJECT_DIR$/SupermarketOrderManagerSystem/target/SupermaketOrderManagerSystem-1.0-SNAPSHOT/META-INF/MANIFEST.MF" />
+        <element id="file-copy" path="$PROJECT_DIR$/SupermarketOrderManagerSystem/target/SupermaketOrderManagerSystem-Unknown/META-INF/MANIFEST.MF" />
       </element>
       <element id="javaee-facet-resources" facet="SupermaketOrderManagerSystem/web/Web" />
     </root>

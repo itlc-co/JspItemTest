@@ -1,4 +1,4 @@
-package org.smbms.dao.base;
+package org.smbms.util;
 
 import java.io.IOException;
 import java.io.InputStream;
@@ -40,7 +40,7 @@ public class SqlUtils {
     static {
         // 1.获取配置文件信息的输入流通过properties存储
         Properties properties = new Properties();
-        InputStream resourceAsStream = ClassLoader.getSystemResourceAsStream("mysql.properties");
+        InputStream resourceAsStream = SqlUtils.class.getClassLoader().getResourceAsStream("mysql.properties");
         try {
             // 2.将输入流加载到properties中
             properties.load(resourceAsStream);
@@ -55,10 +55,10 @@ public class SqlUtils {
     }
 
     /**
-     * @Description: 获取数据库的连接对象
      * @return 数据库的连接对象
      * @throws ClassNotFoundException
      * @throws SQLException
+     * @Description: 获取数据库的连接对象
      * @Date: 2021.10.27 16:38
      */
     public static Connection getConnectionMysql() throws ClassNotFoundException, SQLException {
@@ -69,10 +69,10 @@ public class SqlUtils {
     }
 
     /**
-     * @Description:  关闭数据连接后的资源
-     * @param ps  PreparedStatement对象
-     * @param conn  Connection对象
-     * @param rs ResultSet对象
+     * @param ps   PreparedStatement对象
+     * @param conn Connection对象
+     * @param rs   ResultSet对象
+     * @Description: 关闭数据连接后的资源
      */
     public static void closeResource(PreparedStatement ps, Connection conn, ResultSet rs) {
         // PreparedStatement对象如果不为null则关闭PreparedStatement资源对象
@@ -86,14 +86,14 @@ public class SqlUtils {
         try {
             if (conn != null) conn.close();
             conn = null;
-        }catch (SQLException e){
+        } catch (SQLException e) {
             e.printStackTrace();
         }
         // ResultSet对象如果不为null则关闭ResultSet资源对象
-        try{
+        try {
             if (rs != null) rs.close();
             rs = null;
-        }catch (SQLException e){
+        } catch (SQLException e) {
             e.printStackTrace();
         }
     }

@@ -1,4 +1,4 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
+﻿<%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
@@ -22,7 +22,6 @@
 					<a href="javascript:page_nav(document.forms[0],${param.currentPageNo+1 });">下一页</a>
 					<a href="javascript:page_nav(document.forms[0],${param.totalPageCount });">最后一页</a>
 				</c:if>
-				&nbsp;&nbsp;
 			</ul>
 		 <span class="page-go-form"><label>跳转至</label>
 	     <input type="text" name="inputPage" id="inputPage" class="page-key" />页

@@ -1,4 +1,4 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
+﻿<%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@include file="/jsp/common/head.jsp"%>
 
@@ -15,7 +15,8 @@
                     <label for="userCode">用户编码：</label>
                     <input type="text" name="userCode" id="userCode" value=""> 
 					<!-- 放置提示信息 -->
-					<font color="red"></font>
+<%--					<font color="red"></font>--%>
+                    <span style="color: red"></span>
                 </div>
                 <div>
                     <label for="userName">用户名称：</label>

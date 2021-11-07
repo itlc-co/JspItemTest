@@ -45,9 +45,9 @@ public class CharacterEncodingFilter implements Filter {
     @Override
     public void doFilter(ServletRequest servletRequest, ServletResponse servletResponse, FilterChain filterChain) throws IOException, ServletException {
         // 设置请求编码集
-        servletRequest.setCharacterEncoding("utf-8");
+        servletRequest.setCharacterEncoding("UTF-8");
         // 设置响应编码集
-        servletResponse.setCharacterEncoding("utf-8");
+        servletResponse.setCharacterEncoding("UTF-8");
         // 将请求与响应传递给过滤器链放行
         filterChain.doFilter(servletRequest, servletResponse);
     }

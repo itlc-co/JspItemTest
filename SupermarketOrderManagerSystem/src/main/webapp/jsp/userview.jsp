@@ -1,3 +1,4 @@
+﻿<%@page import="java.text.SimpleDateFormat" %>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@include file="/jsp/common/head.jsp"%>
@@ -15,7 +16,7 @@
 					<c:if test="${user.gender == 2 }">女</c:if>
 				</span>
 			</p>
-            <p><strong>出生日期：</strong><span>${user.birthday }</span></p>
+            <p><strong>出生日期：</strong><span>${SimpleDateFormat.getDateInstance(SimpleDateFormat.DEFAULT).format(user.birthday.getTime()) }</span></p>
             <p><strong>用户电话：</strong><span>${user.phone }</span></p>
             <p><strong>用户地址：</strong><span>${user.address }</span></p>
             <p><strong>用户角色：</strong><span>${user.userRoleName}</span></p>

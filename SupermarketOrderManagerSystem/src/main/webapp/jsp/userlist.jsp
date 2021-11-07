@@ -1,5 +1,7 @@
+﻿<%@ page import="java.text.SimpleDateFormat" %>
+<%@ page import="java.util.List" %>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8"%>
+		 pageEncoding="UTF-8"%>
 <%@include file="/jsp/common/head.jsp"%>
         <div class="right">
             <div class="location">
@@ -15,7 +17,7 @@
 					 <span>用户角色：</span>
 					 <select name="queryUserRole">
 						<c:if test="${roleList != null }">
-						   <option value="0">--请选择--</option>
+						   <option value="">--请选择--</option>
 						   <c:forEach var="role" items="${roleList}">
 						   		<option <c:if test="${role.id == queryUserRole }">selected="selected"</c:if>
 						   		value="${role.id}">${role.roleName}</option>
@@ -37,6 +39,8 @@
                     <th width="10%">年龄</th>
                     <th width="10%">电话</th>
                     <th width="10%">用户角色</th>
+					<th width="10%">创建日期</th>
+					<th width="10%">角色编号</th>
                     <th width="30%">操作</th>
                 </tr>
                    <c:forEach var="user" items="${userList }" varStatus="status">
@@ -61,6 +65,16 @@
 						</td>
 						<td>
 							<span>${user.userRoleName}</span>
+						</td>
+						<td>
+							<span style="width: 100px">
+								${SimpleDateFormat.getDateInstance(SimpleDateFormat.DEFAULT).format(user.createionDate.getTime())}
+							</span>
+						</td>
+						<td>
+							<span style="width: 100px">
+									${user.roleCode}
+							</span>
 						</td>
 						<td>
 						<span><a class="viewUser" href="javascript:;" userid=${user.id } username=${user.userName }><img src="${pageContext.request.contextPath }/images/read.png" alt="查看" title="查看"/></a></span>

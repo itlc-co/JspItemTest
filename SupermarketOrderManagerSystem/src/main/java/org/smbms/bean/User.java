@@ -1,4 +1,4 @@
-package org.smbms.javabean;
+package org.smbms.bean;
 
 import java.time.LocalDateTime;
 import java.util.Calendar;
@@ -6,8 +6,8 @@ import java.util.Calendar;
 /**
  * @Description: 用户实体类
  * @ClassName: User
- * @PackageName:  org.smms.javabean
- * @ProjectName:  SupermarketOrderManagerSystem
+ * @PackageName: org.smms.javabean
+ * @ProjectName: SupermarketOrderManagerSystem
  * @Author: lc_co
  * @Date: 2021.10.13 19:05
  * @Version: 1.0
@@ -17,30 +17,31 @@ import java.util.Calendar;
  */
 public class User {
 
-    private Integer id;  // id值
-    private String userCode;          //用户编码
-    private String userName;        //用户名称
-    private String userPassword;      //用户密码
-    private Integer gender;              //用户性别
-    private Calendar birthday;        //出生日期
-    private String phone;            //电话
-    private String address;        //地址
-    private Integer userRole;             //用户角色
-    private Integer creator;           //创建者
-    private Calendar creationDate;   //创建时间
-    private Integer regenerator;             //更新者
-    private Calendar modifyDate;        // 更新日期
-    private Integer age;          //年龄
-    private String userRoleName;    //用户角色名称
+    public Integer id;  // id值
+    public String userCode;          //用户编码
+    public String userName;        //用户名称
+    public String userPassword;      //用户密码
+    public Integer gender;              //用户性别
+    public Calendar birthday;        //出生日期
+    public String phone;            //电话
+    public String address;        //地址
+    public Integer userRole;             //用户角色
+    public Integer createBy;           //创建者
+    public Calendar createionDate;   //创建时间
+    public Integer regenerator;             //更新者
+    public Calendar modifyDate;        // 更新日期
+    public Integer age;          //年龄
+    public String userRoleName;    //用户角色名称
+    public String roleCode;  // 用户角色昵称
 
     public User() {
     }
 
-    public int getId() {
+    public Integer getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(Integer id) {
         this.id = id;
     }
 
@@ -68,11 +69,11 @@ public class User {
         this.userPassword = userPassword;
     }
 
-    public int getGender() {
+    public Integer getGender() {
         return gender;
     }
 
-    public void setGender(int gender) {
+    public void setGender(Integer gender) {
         this.gender = gender;
     }
 
@@ -100,35 +101,35 @@ public class User {
         this.address = address;
     }
 
-    public int getUserRole() {
+    public Integer getUserRole() {
         return userRole;
     }
 
-    public void setUserRole(int userRole) {
+    public void setUserRole(Integer userRole) {
         this.userRole = userRole;
     }
 
-    public int getCreator() {
-        return creator;
+    public Integer getCreator() {
+        return createBy;
     }
 
-    public void setCreator(int creator) {
-        this.creator = creator;
+    public void setCreator(Integer creator) {
+        this.createBy = creator;
     }
 
-    public Calendar getCreationDate() {
-        return creationDate;
+    public Calendar getCreateionDate() {
+        return createionDate;
     }
 
-    public void setCreationDate(Calendar creationDate) {
-        this.creationDate = creationDate;
+    public void setCreateionDate(Calendar creationDate) {
+        this.createionDate = creationDate;
     }
 
-    public int getRegenerator() {
+    public Integer getRegenerator() {
         return regenerator;
     }
 
-    public void setRegenerator(int regenerator) {
+    public void setRegenerator(Integer regenerator) {
         this.regenerator = regenerator;
     }
 
@@ -156,4 +157,14 @@ public class User {
     public void setUserRoleName(String userRoleName) {
         this.userRoleName = userRoleName;
     }
+
+    public String getRoleCode() {
+        return roleCode;
+    }
+
+    public void setRoleCode(String roleCode) {
+        this.roleCode = roleCode;
+    }
+
+
 }

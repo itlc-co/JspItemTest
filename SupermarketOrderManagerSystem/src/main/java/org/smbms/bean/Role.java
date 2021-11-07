@@ -1,4 +1,4 @@
-package org.smbms.javabean;
+package org.smbms.bean;
 
 import java.util.Calendar;
 
@@ -16,13 +16,14 @@ import java.util.Calendar;
  * @Version: 1.0
  */
 public class Role {
-    private Integer id;   //id
-    private String roleCode;  //角色编码
-    private String roleName;  //角色名称
-    private Integer createBy;  //创建者
-    private Calendar createionDate;  //创建时间
-    private Integer regenerator;  //更新者
-    private Calendar modifyDate; //更新时间
+
+    public Integer id;   //id
+    public String roleCode;  //角色编码
+    public String roleName;  //角色名称
+    public Integer createBy;  //创建者
+    public Calendar createionDate;  //创建时间
+    public Integer regenerator;  //更新者
+    public Calendar modifyDate; //更新时间
 
     public Role() {
     }

@@ -1,4 +1,4 @@
-package org.smbms.javabean;
+package org.smbms.bean;
 
 import java.util.Calendar;
 
@@ -16,6 +16,7 @@ import java.util.Calendar;
  * @Version: 1.0
  */
 public class Customer {
+
     private Integer id;  // ID
     private Integer userId; // 用户ID(用户表关联字段)
     private String customerContact; //联系人姓名

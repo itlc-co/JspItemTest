@@ -1,4 +1,4 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
+﻿<%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@include file="/jsp/common/head.jsp"%>
 
@@ -9,6 +9,7 @@
       </div>
       <div class="providerAdd">
           <form id="providerForm" name="providerForm" method="post" action="${pageContext.request.contextPath }/jsp/provider.do">
+              <input type="hidden" name="method" value="modifysave">
               <!--div的class 为error是验证错误，ok是验证成功-->
               <div class="">
                   <label for="proCode">供应商编码：</label>

@@ -1,8 +1,9 @@
 package org.smbms.dao.user;
 
-import org.smbms.javabean.User;
+import org.smbms.bean.User;
 
 import java.sql.Connection;
+import java.util.List;
 
 /**
  * @Description: 操作User实体类对应的数据库表的基础接口
@@ -60,7 +61,7 @@ public interface BaseUserDao {
      * @Return: int 操作数 除-1外均正常
      * @Throws: Exception
      */
-    int updateUser(Connection connection, Integer id) throws Exception;
+    int updateUser(Connection connection, Integer id, User user) throws Exception;
 
     /**
      * @Description: 根据用户名称修改用户数据
@@ -71,7 +72,7 @@ public interface BaseUserDao {
      * @Return: int 操作数 除-1外均正常
      * @Throws: Exception
      */
-    int updateUser(Connection connection, String userCode) throws Exception;
+    int updateUser(Connection connection, String userCode, User user) throws Exception;
 
     /**
      * @Description: 根据用户名称修改用户密码
@@ -117,8 +118,85 @@ public interface BaseUserDao {
      * @return: User 返回用户实体类实例化对象
      * @throws: Exception 异常信息
      */
-    User getUserById(Connection connection, String userCode) throws Exception;
+    User getUserByUserCode(Connection connection, String userCode) throws Exception;
 
+    /**
+     * @description: 根据用户名查询用户信息数据
+     * @Author: lc_co
+     * @Date: 2021-10-28 23:47:21
+     * @param: Connection connection 数据库连接对象
+     * @param: String userCode 用户名
+     * @return: User 返回用户实体类实例化对象
+     * @throws: Exception 异常信息
+     */
+    User getUserByUserName(Connection connection, String userName) throws Exception;
 
+    /**
+     * @Description: 根据用户id查询用户指定字段信息数据
+     * @Author: lc_co
+     * @Date: 2021-10-28 23:48:21
+     * @Param: Connection connection
+     * @Param: Integer id
+     * @Return: org.smbms.javabean.User
+     * @Throws: Exception
+     */
+    User getUserById(Connection connection, Integer id, String... fieldName) throws Exception;
 
+    /**
+     * @Description: 根据指定用户信息字段及字段值查询用户信息数据
+     * @Author: lc_co
+     * @Date: 2021-10-28 23:48:21
+     * @Param: Connection connection
+     * @Param: Integer id
+     * @Return: org.smbms.javabean.User
+     * @Throws: Exception
+     */
+    List<User> getUserByField(Connection connection, String fieldVal, String fieldName) throws Exception;
+
+    /**
+     * @Description: 通过联表查询连接用户表与角色表获取用户的角色名并返回查询到的信息数据
+     * @Author: lc_co
+     * @Date: 2021-11-01 22:54:43
+     * @Param: Connection connection 数据库连接对象
+     * @Param: Integer id id值
+     * @Return: org.smbms.javabean.User 单个查询到的用户信息及用户角色信息
+     * @Throws: Exception
+     */
+    User getUserUnionRole(Connection connection, Integer id) throws Exception;
+
+    /**
+     * @description: 通过条件查询获取记录数
+     * @Author: lc_co
+     * @Date: 2021-10-29 16:13:25
+     * @param: Connection connection 数据库连接对象
+     * @param: String userName 用户名
+     * @param: int userRole 用户角色编号
+     * @return: int 记录数
+     * @throws: Exception
+     */
+    int getUserCount(Connection connection, String userName, int userRole) throws Exception;
+
+    /**
+     * @Description: 通过当前页与每一页的大小获取全部用户信息数据
+     * @Author: lc_co
+     * @Date: 2021-10-29 16:17:38
+     * @Param: Connection connection
+     * @Param: int curPage  当前页
+     * @Param: int pageSize 页的容量
+     * @Return: java.util.List<org.smbms.javabean.User> 所有用户形成的list
+     * @Throws: Exception
+     */
+    List<User> getAllUser(Connection connection, int curPage, int pageSize) throws Exception;
+
+    /**
+     * @Description: 通过当前页与每一页的大小获取全部用户指定字段信息数据
+     * @Author: lc_co
+     * @Date: 2021-10-29 16:17:38
+     * @Param: Connection connection
+     * @Param: int curPage  当前页
+     * @Param: int pageSize 页的容量
+     * @Return: java.util.List<org.smbms.javabean.User> 所有用户形成的list
+     * @Throws: Exception
+     */
+    List<User> getAllUser(Connection connection, int curPage, int pageSize, String fieldName, String fieldVal, int userRole) throws Exception;
 }
